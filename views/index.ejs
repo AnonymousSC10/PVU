@@ -1,0 +1,20 @@
+  <!-- INLUIMOS EL HEADER -->
+  <%- include('./path/head.ejs'); %>
+
+  <body>
+    <div id="__nuxt">
+      <!---->
+      <div id="__layout">
+        <!-- INLUIMOS LA BARRA DE NAVEGACIÓN -->
+        <%- include('./path/navBar.ejs'); %>
+        <div id='content'>
+            <!-- ACÁ INLUIMOS EL CONTENIDO DINAMICAMENTE -->
+        </div>
+
+        <!-- INLUIMOS EL ALERTA-->
+        <%- include('./path/snackbar.ejs'); %>
+      </div>
+    </div>
+  <script src="js/main.js"></script>
+</body>
+</html>
