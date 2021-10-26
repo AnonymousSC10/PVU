@@ -11,7 +11,7 @@ var express = require('express'),
     faviconURL = __dirname + '/public/img/favicon.svg',
     publicDir = express.static(__dirname + '/public'),
     viewDir = __dirname + '/views',
-    port = (process.env.PORT || 8000),
+    port = (process.env.PORT || 80),
     app = express()
 
 app
