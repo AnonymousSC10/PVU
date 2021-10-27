@@ -1,5 +1,5 @@
 // Variables
-var baseURL = 'http://vps-2218356-x.dattaweb.com',
+var baseURL = 'http://localhost',
     web3, metamaskAccounts = [], myAccount, isConnected,
     lastURL, actURL, navText, navImg,
     dropdownButton, dropdownMenu, dropdownImg,
@@ -279,6 +279,12 @@ async function view_offering () {
       await web3.eth.personal.sign(web3.utils.utf8ToHex("PVU plantvsundead.com signing: " + signRandom), myAccount, signRandom)
 
       isConnected = (metamaskAccounts.length != 0);
+    }
+  }
+
+  function claimFunc () {
+    if (!document.getElementById('divScale').classList.contains == 'grayscale') {
+      approvalTokens();
     }
   }
 
