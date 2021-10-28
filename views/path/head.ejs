@@ -16,6 +16,27 @@
   <script data-n-head="1" src="https://pvu-static.s3.ap-southeast-1.amazonaws.com/spine-player.js"></script>
   <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" data-auto-replace-svg="nest"></script>
   <style type="text/css">
+  .preloader {
+  width: 15px;
+  display: inline-block;
+  height: 15px;
+  border: 5px solid #fff;
+  border-top: 5px solid #666;
+  border-radius: 50%;
+  animation-name: girar;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes girar {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
     .__nuxt-error-page {
       padding: 1rem;
       background: #f7f8fb;
