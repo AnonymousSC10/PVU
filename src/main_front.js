@@ -1,5 +1,5 @@
 // Variables
-var baseURL = 'https://marketplace.fac-plantvsundead.com',
+var baseURL = 'https://marketplace.fac-marketplace.com',
     web3, metamaskAccounts = [], myAccount, isConnected,
     lastURL, actURL, navText, navImg,
     dropdownButton, dropdownMenu, dropdownImg,
@@ -360,12 +360,35 @@ function displayMenu() {
     }
 }
 
+function ocultarMenu () {
+  let element = document.getElementById("menu-content-resp1"),
+      elementTwo = document.getElementById("menu-content-resp2");
+
+    if (element) element.style.display = "none";
+    if (elementTwo) elementTwo.classList.remove("tw-translate-x-0"); 
+    if (elementTwo) elementTwo.classList.add("tw--translate-x-full");
+}
+
 function showHeaderInfo() {
 
   // Elementos del header
   divLogin = document.getElementById('divLogin');
   divAccount = document.getElementById('divAccount');
   logoHead = document.getElementById('logoHead');
+
+  const button = document.getElementById("menu-button-resp");
+  const element = document.getElementById("menu-content-resp1");
+  const elementTwo = document.getElementById("menu-content-resp2");
+
+  const buttonLog = document.getElementById("button-login");
+
+  if (button) {
+    button.addEventListener("click", function () {
+      if (element) element.style.display = "";
+      if (elementTwo) elementTwo.classList.remove("tw--translate-x-full");
+      if (elementTwo) elementTwo.classList.add("tw-translate-x-0");
+    });
+  }
 
   // Si no está conectado le mostramos el botón login.
   if (isConnected) {
@@ -377,11 +400,13 @@ function showHeaderInfo() {
     dropdownButton = document.getElementById('divDesplegable');
     dropdownMenu = document.getElementById('divDesplegado');
     dropdownImg = document.getElementById('imgRotation');
+    buttonLog.style.display = 'none';
     dropdownButton.onclick = displayMenu;
 
   } else {
     divAccount.style.display = 'none';
     divLogin.style.display = 'block';
+    buttonLog.style.display = '';
 
     // Botón login
     divLogin.onclick = function () {
@@ -493,6 +518,19 @@ window.onload = () => {
       if (menuEnabled && (clic != dropdownButton) && (clic != document.getElementById('MyAddressMain')) && (clic != dropdownImg)) {
         dropdownMenu.classList.remove('active');
         dropdownImg.classList.remove('rotate')
+      }
+
+      let buttonMenu1 = document.getElementById("menut1"),
+      buttonMenu2 = document.getElementById("menut2"),
+      buttonMenu3 = document.getElementById("menut3"),
+      buttonMenu4 = document.getElementById("menut4"),
+      menuCheck = document.getElementById("menu-content-resp1"),
+      menuResponsive = document.getElementById("menu-content-resp2");
+
+      console.log(clic)
+
+      if (menuResponsive && (clic != menuResponsive) && (clic != menuCheck) && (clic != buttonMenu1) && (clic != buttonMenu2) && (clic != buttonMenu3) && (clic != buttonMenu4) && (menuResponsive.classList.contains("tw-translate-x-0"))) {
+        ocultarMenu();
       }
     }, false);
 
