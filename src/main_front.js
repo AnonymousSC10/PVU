@@ -1,5 +1,5 @@
 // Variables
-var baseURL = 'https://marketplace.fac-marketplace.com',
+var baseURL = 'https://marketplace.fac-plantvsundead.com',
     web3, metamaskAccounts = [], myAccount, isConnected,
     lastURL, actURL, navText, navImg,
     dropdownButton, dropdownMenu, dropdownImg,
