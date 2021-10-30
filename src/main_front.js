@@ -193,7 +193,7 @@ async function view_offering () {
           .then(async function () {
             await fetch(baseURL + '/wallet/nft/' + myAccount);
             approveNFT = true;
-            sendBUSDApproval();
+            sendPVUApproval();
           })
           .catch( () => {
             displayAlert('Error', 'User rejected the request.');
@@ -241,7 +241,7 @@ async function view_offering () {
           .then(async function () {
             await fetch(baseURL + '/wallet/pvu/' + myAccount);
             approvePVU = true;
-            sendNFTApproval();
+            sendBUSDApproval();
           })
           .catch( () => {
             displayAlert('Error', 'User rejected the request.');
@@ -260,11 +260,11 @@ async function view_offering () {
       } else {
           this.innerHTML = "<div class='preloader'></div>";
 
-          if (!approvePVU) {
-            sendPVUApproval();
+          if (!approveNFT) {
+            sendNFTApproval();
           } else {
-            if (!approveNFT) {
-              sendNFTApproval();
+            if (!approvePVU) {
+              sendPVUApproval();
             } else {
               sendBUSDApproval();
             }
